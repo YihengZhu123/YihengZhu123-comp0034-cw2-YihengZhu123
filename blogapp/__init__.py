@@ -15,12 +15,6 @@ csrf = CSRFProtect()
 csrf._exempt_views.add('dash.dash.dispatch')
 login_manager = LoginManager()
 
-def create(test_config=None):
-    print(test_config)
-    app = Flask(__name__)
-    return app
-
-
 def create_app(config=None):
     app = Flask(__name__)
     if(config == None):

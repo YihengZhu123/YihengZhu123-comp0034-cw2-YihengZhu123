@@ -22,9 +22,11 @@ class ProductionConfig(Config):
 
 
 class DevelopmentConfig(Config):
+    NAME = "DevelopmentConfig"
     SQLALCHEMY_ECHO = True
 
 class TestingConfig(Config):
+    NAME = "TestingConfig"
     TESTING = True
     SQLALCHEMY_ECHO = True
     WTF_CSRF_ENABLED = False
