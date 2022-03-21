@@ -6,7 +6,7 @@ from blogapp.models import User, Blog
 @pytest.fixture(scope='session')
 def app():
     """Create a Flask app for the testing"""
-    app = create_app(config_class_name=config.TestingConfig)
+    app = create_app(config="blogapp.config.TestingConfig")
     yield app
 
 

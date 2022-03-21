@@ -16,8 +16,6 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + str(Path(__file__).parent.joinpath('coursework.sqlite'))
     TESTING = False
     UPLOADED_PHOTOS_DEST = Path(__file__).parent.joinpath("static", "img")
-    WTF_CSRF_ENABLED = False
-
 
 class ProductionConfig(Config):
     pass
@@ -26,7 +24,7 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     SQLALCHEMY_ECHO = True
 
-
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_ECHO = True
+    WTF_CSRF_ENABLED = False

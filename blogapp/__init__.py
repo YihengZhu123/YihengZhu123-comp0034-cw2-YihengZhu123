@@ -8,19 +8,27 @@ from flask_uploads import UploadSet, IMAGES, configure_uploads
 import dash
 import dash_bootstrap_components as dbc
 from flask.helpers import get_root_path
+from blogapp import config
 
 db = SQLAlchemy()
 csrf = CSRFProtect()
 csrf._exempt_views.add('dash.dash.dispatch')
 login_manager = LoginManager()
 
-
-def create_app(config_class_name):
-    # print(str(config_class_name) + "1111")
+def create(test_config=None):
+    print(test_config)
     app = Flask(__name__)
-    from blogapp import config
-    app.config.from_object(config.DevelopmentConfig)
+    return app
 
+
+def create_app(config=None):
+    app = Flask(__name__)
+    if(config == None):
+        print("Mode: DevelopmentConfig")
+        app.config.from_object("blogapp.config.DevelopmentConfig")
+    else:
+        print("Mode: TestingConfig")
+        app.config.from_object("blogapp.config.TestingConfig")
     dashapp = register_dashapp(app)
     csrf.init_app(app)
 
