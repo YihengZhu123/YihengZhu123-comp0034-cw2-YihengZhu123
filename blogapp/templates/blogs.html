@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="center-title">{% block title %} All Blogs {% endblock %}</h1>
+    <div class="center-container">
+        <div class="grid-container">
+            {% for blog in query %}
+            <div class="grid-item">
+                <div class="grid-title">{{blog.title}}</div>
+                <div class="grid-content">{{blog.content}}</div>
+                <div class="field">
+                    <form action="{{ url_for('blog.view_blog_by_id', title=blog.title) }}" method="get">
+                       <button type="submit" class="grid-btn"> View </button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

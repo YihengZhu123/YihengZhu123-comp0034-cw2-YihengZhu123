@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h1 class="center-title">{% block title %}Add a New Blog{% endblock %}</h1>
+
+    <form method="POST" action="/" class="center-form">
+        {{ form.csrf_token }}
+        {{ form.title.label(class='label')}}
+        {{ form.title(class='input') }}
+
+        {% if form.title.errors %}
+            <ul class="errors">
+                {% for error in form.title.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {{ form.content.label(class='label')}}
+        {{ form.content(class='large-input')}}
+
+        {% if form.content.errors %}
+            <ul class="errors">
+                {% for error in form.content.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div class="field">
+            <br>
+            <p><button type="submit" class="btn">Add</button></p>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

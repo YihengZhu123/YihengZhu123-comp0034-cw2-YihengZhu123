@@ -1,0 +1,180 @@
+body{
+  background-color: #D7CCB6;
+  box-sizing: border-box;
+  font-family: "Fira Code Light";
+  color: #681414;
+}
+.center-container{
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto 0 auto;
+  width: 1000px;
+}
+
+.form-container{
+  margin: 0 auto;
+  width: 500px;
+  display: block;
+}
+
+.center-title{
+  text-align: center;
+  font-size: 30px;
+  line-height: 1.5;
+  display: block;
+  width: 400px;
+  margin: 20px auto 0 auto;
+}
+
+
+
+.center-form{
+  box-sizing: border-box;
+  display: block;
+  width: 400px;
+  margin: 20px auto 0 auto;
+}
+
+nav {
+  background-color: #681414;
+  height: 50px;
+}
+
+nav a {
+  color: #D7CCB6;
+  background-color: #681414;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 50px;
+  padding-top: 15px;
+  height: 49px;
+  width: 100px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+nav a:hover{
+  background-color: #D7CCB6;
+  color: #681414;
+  border: solid #681414 2px;
+}
+
+.label{
+  font-weight: normal;
+  display: block;
+  width: 50%;
+  text-align: left;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input{
+  display: block;
+  width: 200px;
+  height: 30px;
+  vertical-align: middle;
+  border-radius: 6px;
+  border: 1px solid #681414;
+  vertical-align: middle;
+  margin: 4px auto 16px auto;
+}
+
+.large-input{
+  display: block;
+  width: 400px;
+  height: 100px;
+  vertical-align: middle;
+  border-radius: 6px;
+  border: 1px solid #681414;
+  vertical-align: middle;
+  margin: 4px auto 16px auto;
+}
+
+.btn {
+  display: block;
+  color: #D7CCB6;
+  background-color: #681414;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #D7CCB6;
+  width: 100px;
+  height: 50px;
+  font-size: 100%;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background-color: #D7CCB6;
+  color: #681414;
+  border-color: #681414;
+  width: 100px;
+
+}
+
+#signup_link{
+  color: #681414
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat( 5, 200px);
+  gap: 8px;
+  grid-auto-rows: 200px;
+  width: 100%;
+  margin-top: 8px;
+
+}
+.grid-item {
+  border: 5px solid #681414;
+  padding: 10px 10px 0px 10px;
+  width: 100%;
+  text-align: center;
+  color: #681414;
+  display: block;
+  position:relative;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.grid-btn{
+  display: block;
+  color: #D7CCB6;
+  background-color: #681414;
+  border: solid transparent 5px;
+  margin-left: -14px;
+  height: 50px;
+  font-size: 100%;
+  width:200px;
+  bottom:0;
+  position: absolute;
+}
+
+.grid-btn:hover {
+  background-color: #D7CCB6;
+  color: #681414;
+  border: 5px solid #681414;
+}
+
+#comment_title{
+  font-size: 20px;
+  line-height: 1;
+  margin-top: 100px;
+}
+
+.comment_content{
+  display: block;
+
+}
+
+#comment_btn{
+  display: inline-block;
+  height: 40px;
+  width: 80px;
+}
+
+#blog-btn{
+  position: relative;
+  margin-top: 10px;
+}

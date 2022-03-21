@@ -1,0 +1,10 @@
+dash
+pandas
+dash-bootstrap-components
+flask
+Flask-WTF
+Flask-SQLAlchemy
+Flask-Login
+plotly
+Flask-Reuploaded
+geopandas

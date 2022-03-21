@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="center-title">{% block title %} {{title}} {% endblock %}</h1>
+
+    <div class="center-container">
+        {{content}}
+
+        <h2 class="center-title" id="comment_title">Comments</h2>
+        {% for comment in comments %}
+        <div class="comment_content">
+            {{comment.content}}
+        </div>
+        {% endfor %}
+
+        <form method="POST" action="{{ url_for('blog.view_blog_by_id', title=title) }} ">
+            {{ form.csrf_token }}
+            {{ form.comment.label}}
+            {{ form.comment}}
+            <button type="submit" class="btn" id="comment_btn"> Submit </button>
+        </form>
+
+        <div>
+            <form action="{{ url_for('blog.blog_delete', title=title) }} " method="get">
+                <button type="submit" class="grid-btn" id="blog-btn"> Delete </button>
+<!--                <button type="submit" class="grid-btn"> Edit </button>-->
+            </form>
+        </div>
+    </div>
+{% endblock %}

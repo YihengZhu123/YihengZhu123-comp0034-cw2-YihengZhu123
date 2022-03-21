@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {% endblock %} - Blog Platform</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+            integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+            async></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+<body>
+    <script>
+        var login_btn_status = "Log In";
+
+        window.onload = function() {
+            let cur_url = window.location.href;
+            if (!cur_url.includes("login") && !cur_url.includes("signup")){
+                login_btn_status = "Log Out";
+            }
+            else{
+                login_btn_status = "Log In";
+            }
+            document.getElementById("login_btn").innerHTML = login_btn_status;
+        }
+
+        function login_redirect(){
+            if(login_btn_status == "Log In"){
+                location.href = '/login';
+            }
+            else{
+                location.href = '/logout'
+            }
+        }
+
+
+    </script>
+    <nav>
+        <a href="{{ url_for('blog.index') }}">New Blog</a>
+        <a href="{{ url_for('blog.allblogs') }}">All Blogs</a>
+        <a href="/dashboard/"> Dashboard </a>
+        <a id="login_btn" onclick="login_redirect()">Log In</a>
+    </nav>
+    <div id="flash-messages">
+        {# Displays flashed messages on a page #}
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="alert alert-info" role="alert">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
