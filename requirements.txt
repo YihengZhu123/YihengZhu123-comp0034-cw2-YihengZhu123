@@ -5,6 +5,12 @@ flask
 Flask-WTF
 Flask-SQLAlchemy
 Flask-Login
+sqlalchemy
 plotly
 Flask-Reuploaded
 geopandas
+WTForms
+setuptools
+pytest
+Flask-Testing
+requests

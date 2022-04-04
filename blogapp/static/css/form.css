@@ -41,7 +41,7 @@ nav {
 }
 
 nav a {
-  color: #D7CCB6;
+  color: #D7CCB6!important;
   background-color: #681414;
   text-align: center;
   font-size: 1em;
@@ -55,7 +55,7 @@ nav a {
 
 nav a:hover{
   background-color: #D7CCB6;
-  color: #681414;
+  color: #681414!important;
   border: solid #681414 2px;
 }
 
